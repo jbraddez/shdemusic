@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHDE - About Me</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="website icon" href="./images/SHDE.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Black+Ops+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ 
+
+    <main class="aboutmain">
+        <h1>About Me</h1>
+        <div class="prof-cont"><img class="profile-img" src="./images/profile.jpeg" alt="SHDE stood over the beach looking out into the sunset"></div>
+        <p style="margin-top: 50px;">SHDE (pronounced SHADE) is an 18 year old singer from the UK. From a young age he always listened to a lot of music, ranging from the most popular pop songs of the time, to lyrically deeper rap from the late 90s and early 2000s. His true interest in creating music began in 2019 after making diss tracks with his friends as a joke. However seeing these tracks actually generate attention, he became more and more interested in taking it seriously. In December of 2019 he released his first single “Dynasty” which underperformed, and people were not impressed. This put SHDE off the idea of making music for a long time. However, things started to change as in February of 2021 SHDE dropped his first new single PARADISE, which performed really well and generated a lot of attention to him. After the song released, he continued to improve and prove himself as a valuable asset to the industry.</p>
+        <br>
+        <p style="margin-bottom: 75px;">I collab with artists from around the world such as <a class="namelinks" href="https://open.spotify.com/artist/2j2wfGvDhaAR8RVqjzlLpS">Yxung Miller</a>, <a class="namelinks" href="https://open.spotify.com/artist/6vT0UWqoctUqsLhwrnDJmk">Awedeo</a>, <a href="https://open.spotify.com/artist/7nFj6yp6NeBXI077t3uyEP" class="namelinks">PURLE</a>, <a href="https://open.spotify.com/artist/0dOYHlAMSDJA4ClBN58Tk2" class="namelinks">KNE</a> and <a href="https://open.spotify.com/artist/5WYO9KQUnOwU6EWJiE3fnz" class="namelinks">Valious</a>.</p>
+        <a href="game.html" class="bot-game">Game</a>
+    </main>
+
+    <header>
+        <a title="Home" class="logo" href="index.html">SHDE</a> 
+
+
+        <span class="links"><a class="sociallink" href="social.html">Social</a><a class="about-me" href="about-me.html">About Me</a>
+            <a class="contact-me" href="contact.html">Contact Me</a></span>
+
+        <nav>
+            <label id="nav-label" for="touch"><span>Menu &#9660;</span></label>
+            <input  type="checkbox" id="touch"> 
+            <ul class="slide">
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="social.html">Social</a></li>
+            </ul>
+        </nav>
+            
+    </header>
+    <a title="SHDE | Spotify" href="https://open.spotify.com/artist/4hvHMl18JQMUEX4R1eYS9v"><img class="spotify-img" alt="SHDE on spotify" src="./images/spotify.png"></a>
+    <footer>
+        <a class="socialcont" href="https://on.soundcloud.com/rcQnj2o3fdWNr2SQ8"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/soundcloud-white-icon.png" alt="soundcloud"></a>
+        <a class="socialcont" href="https://www.youtube.com/channel/UC32frJC_AUr5UkMD-MpPHyA"><img class="social" src="https://pngimg.com/d/youtube_button_PNG36.png" alt="youtube"></a>
+        <a class="socialcont" href="https://music.apple.com/gb/artist/shde/1554885395"><img class="social" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Apple_Music_logo.png" alt="apple music"></a>
+        <a class="socialcont" href="https://www.amazon.co.uk/music/player/artists/B08X6CLLVS/shde"><img class="social" src="./images/amazonmusic.png" alt="amazon music"></a>
+        <a class="socialcont" href="https://www.instagram.com/shdemusic/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="instagram"></a>
+    </footer>
+
+
+    <span class="headerspan" style="position: absolute;"><a class="game-link" href="game.html">Game</a></span>
+    <script>
+        function game(){
+            var screenWidth = window.innerWidth;
+            var topl = document.querySelector('.game-link');
+            var botl = document.querySelector('.bot-game');
+            if (screenWidth < 700){
+                topl.style.display = 'none';
+                botl.style.display = 'block';
+            }else{
+                topl.style.display = 'block';
+                botl.style.display = 'none';
+            }
+        }
+        window.addEventListener('load', game);
+        window.addEventListener('resize', game);
+    </script>
+    
+</body>
+</html>

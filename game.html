@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHDE - The Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="website icon" href="./images/SHDE.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Black+Ops+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body style="overflow: hidden;">
+
+    <header>
+        <a title="Home" class="logo" href="index.html">SHDE</a> 
+
+        <span class="links"><a class="sociallink" href="social.html">Social</a><a class="about-me" href="about-me.html">About Me</a>
+            <a class="contact-me" href="contact.html">Contact Me</a></span>
+
+        <nav>
+            <label id="nav-label" for="touch"><span>Menu &#9660;</span></label>
+            <input  type="checkbox" id="touch"> 
+            <ul class="slide">
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="social.html">Social</a></li>
+            </ul>
+        </nav>
+            
+    </header>
+    <a title="SHDE | Spotify" href="https://open.spotify.com/artist/4hvHMl18JQMUEX4R1eYS9v"><img class="spotify-img" alt="SHDE on spotify" src="./images/spotify.png"></a>
+    <footer>
+        <a class="socialcont" href="https://on.soundcloud.com/rcQnj2o3fdWNr2SQ8"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/soundcloud-white-icon.png" alt="soundcloud"></a>
+        <a class="socialcont" href="https://www.youtube.com/channel/UC32frJC_AUr5UkMD-MpPHyA"><img class="social" src="https://pngimg.com/d/youtube_button_PNG36.png" alt="youtube"></a>
+        <a class="socialcont" href="https://music.apple.com/gb/artist/shde/1554885395"><img class="social" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Apple_Music_logo.png" alt="apple music"></a>
+        <a class="socialcont" href="https://www.amazon.co.uk/music/player/artists/B08X6CLLVS/shde"><img class="social" src="./images/amazonmusic.png" alt="amazon music"></a>
+        <a class="socialcont" href="https://www.instagram.com/shdemusic/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="instagram"></a>
+    </footer>
+
+    <div id="counter">0</div>
+    <div id="timer">00:00:00</div>
+    <div class="rotate r1" id="image-container">
+        <img src="./images/cov-thinkingaboutyou.jpg" id="image">
+    </div>
+    
+    
+    
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const imageContainer = document.getElementById('image-container');
+    const counterDisplay = document.getElementById('counter');
+    const timerDisplay = document.getElementById('timer');
+    let counter = 0;
+    let timer = 0;
+
+    let alert10Shown = false;
+    let alert300Shown = false;
+    let alert500Shown = false;
+    let lastMoveTime = 0;
+
+    function formatTime(time) {
+        const hours = Math.floor(time / 3600);
+        const minutes = Math.floor((time % 3600) / 60);
+        const seconds = time % 60;
+        return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+    }
+
+    function checkAlerts() {
+        setTimeout(() => {
+            if (counter === 100 && !alert10Shown) {
+            alert('🎉 WOW! 🎉');
+            alert10Shown = true;
+        }
+        if (timer === 300 && !alert300Shown) {
+            alert("I'm glad you're enjoying it!");
+            alert300Shown = true;
+        }
+        if (counter === 500 && !alert500Shown) {
+            alert('You have an addiction 😦 - but well done!');
+            alert500Shown = true;
+        }
+        }, 100);
+    }
+
+    function moveImage() {
+        const now = Date.now();
+        if (now - lastMoveTime < 80) {
+            return;
+        }
+        lastMoveTime = now;
+
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const randomX = Math.floor(Math.random() * (viewportWidth - imageContainer.offsetWidth));
+        const randomY = Math.floor(Math.random() * (viewportHeight - imageContainer.offsetHeight));
+        imageContainer.style.left = randomX + 'px';
+        imageContainer.style.top = randomY + 'px';
+        counter++;
+        counterDisplay.textContent = counter;
+        checkAlerts();
+    }
+
+    imageContainer.addEventListener('mouseenter', moveImage);
+    imageContainer.addEventListener('click', moveImage);
+
+    setInterval(function() {
+        timer++;
+        timerDisplay.textContent = formatTime(timer);
+        checkAlerts();
+    }, 1000);
+});
+
+    </script>
+
+<!--------->
+
+    <script>
+        function score(){
+            var screenWidth = window.innerWidth;
+            var counter = document.getElementById('counter');
+            if (screenWidth < 700){
+                counter.style.top = '80px';
+                counter.style.fontSize = '2rem';
+            }else{
+                counter.style.top = '';
+                counter.style.fontSize = '';
+            }
+        }
+        window.addEventListener('load', score);
+        window.addEventListener('resize', score);
+    </script>
+</body>
+</html>
