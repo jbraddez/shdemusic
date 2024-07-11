@@ -98,7 +98,7 @@ header{
 }
 
 .links{
-    display: none;
+    display: block;
 }
 
 .contact-me:hover,.about-me:hover,.sociallink:hover{
