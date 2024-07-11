@@ -67,7 +67,7 @@ header{
 
 
 .spotify-img{
-    width: 120px;
+    width: 160px;
     position: fixed;
     left: 10px;
     bottom: 10px;
@@ -539,4 +539,12 @@ nav ul li a:hover {
     transition: 1s ease-in-out;
 }
 
-
+@media screen and (max-width: 750px){
+    .spotify-img{width: 120px;}
+    .social-cont{width: 35px; height: 35px; margin: 0;}
+    .social{max-width:35px; max-height:35px;}
+    footer{flex-direction: column; width: 50px;}
+    .logo{font-size:3rem;}
+    .links{display:none;}
+    nav{display:block;}
+}
