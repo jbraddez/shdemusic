@@ -543,6 +543,7 @@ nav ul li a:hover {
     nav{display:block;}
 }
 
-.links{
-    display: block;
+@media screen and (min-width: 750px){
+        .links{display: block;}
 }
+
