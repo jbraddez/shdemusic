@@ -542,3 +542,7 @@ nav ul li a:hover {
     .links{display:none;}
     nav{display:block;}
 }
+
+.links{
+    display: block;
+}
