@@ -155,14 +155,12 @@
     const audio = document.getElementById('audio');
 
     playButton.addEventListener('click', function() {
-        // Adjust the top position of the albums section with fading effect
-        albumsSection.style.transition = 'top 2s ease'; // Fading effect duration
+        albumsSection.style.transition = 'top 2s ease';
         albumsSection.style.top = '500px';
 
-        // Hide the play button
         playButton.style.display = 'none';
 
-        // Play the audio
+        
         audio.play();
     });
 });
