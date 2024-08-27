@@ -70,29 +70,49 @@
 
     <span class="headerspan" style="position: absolute;"><a class="game-link" href="game.html">Game</a></span>
     <script>
-        function spinner() {
-    var screenWidth = window.innerWidth;
+        document.addEventListener('DOMContentLoaded', function() {
     var profCont = document.querySelector('.prof-cont');
-    
-    if (screenWidth < 768) {
-        profCont.addEventListener('click', rotateImage);
-    }
-}
-
-function rotateImage() {
     var profImg = document.querySelector('.profile-img');
-    profImg.style.transitionDuration = '3200ms';
-    profImg.style.transform = 'rotate(1440deg)';
-    
-    setTimeout(() => {
-        profImg.style.transform = 'rotate(0deg)';
-        profImg.style.transitionDuration = '0s';
-    }, 3300);
-}
+    var screenWidth = window.innerWidth;
 
-window.addEventListener('load', spinner);
-window.addEventListener('resize', spinner);
+    function handleClick() {
+        if (screenWidth < 768) {
+            rotateImage();
+        }
+    }
+
+    function handleMouseOver() {
+        if (screenWidth >= 768) {
+            profImg.classList.add('prof-cont-spin');
+        }
+    }
+
+    function handleMouseOut() {
+        if (screenWidth >= 768) {
+            profImg.classList.remove('prof-cont-spin');
+        }
+    }
+
+    function rotateImage() {
+        profImg.classList.add('prof-cont-spin');
+        setTimeout(function() {
+            profImg.classList.remove('prof-cont-spin');
+        }, 3200);
+    }
+
+    // Event listeners
+    profCont.addEventListener('click', handleClick);
+    profCont.addEventListener('mouseover', handleMouseOver);
+    profCont.addEventListener('mouseout', handleMouseOut);
+
+    // Update screenWidth on resize
+    window.addEventListener('resize', function() {
+        screenWidth = window.innerWidth;
+    });
+});
+
     </script>
     
 </body>
 </html>
+
