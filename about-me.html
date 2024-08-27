@@ -70,21 +70,20 @@
 
     <span class="headerspan" style="position: absolute;"><a class="game-link" href="game">Game</a></span>
     <script>
-        function game(){
+        function spinner(){
             var screenWidth = window.innerWidth;
-            var topl = document.querySelector('.game-link');
-            var botl = document.querySelector('.bot-game');
+            var profCont = document.querySelector('.prof-cont');
+            var profImg = document.querySelector('.profile-img');
             if (screenWidth < 700){
-                topl.style.display = 'none';
-                botl.style.display = 'block';
-            }else{
-                topl.style.display = 'block';
-                botl.style.display = 'none';
+                profCont.addEventListener('click', ()=>{
+                    profImg.style.transform = 'rotate(1440deg)';
+                })
             }
         }
-        window.addEventListener('load', game);
-        window.addEventListener('resize', game);
+        spinner()
+        window.addEventListener('resize', spinner);
     </script>
     
 </body>
 </html>
+
