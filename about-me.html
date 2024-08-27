@@ -36,24 +36,24 @@
         <p style="margin-top: 50px;">SHDE (pronounced SHADE) is a 19 year old singer from the UK. From a young age he always listened to a lot of music, ranging from the most popular pop songs of the time, to lyrically deeper rap from the late 90s and early 2000s. His true interest in creating music began in 2019 after making diss tracks with his friends as a joke. However seeing these tracks actually generate attention, he became more and more interested in taking it seriously. In December of 2019 he released his first single “Dynasty” which underperformed, and people were not impressed. This put SHDE off the idea of making music for a long time. However, things started to change as in February of 2021 SHDE dropped his first new single PARADISE, which performed really well and generated a lot of attention to him. After the song released, he continued to improve and prove himself as a valuable asset to the industry.</p>
         <br>
         <p style="margin-bottom: 75px;">I collab with artists from around the world such as <a class="namelinks" target="_blank" href="https://open.spotify.com/artist/2j2wfGvDhaAR8RVqjzlLpS">Yxung Miller</a>, <a class="namelinks" target="_blank" href="https://open.spotify.com/artist/6vT0UWqoctUqsLhwrnDJmk">Awedeo</a>, <a href="https://open.spotify.com/artist/7nFj6yp6NeBXI077t3uyEP" target="_blank" class="namelinks">PURLE</a>, <a target="_blank" href="https://open.spotify.com/artist/0dOYHlAMSDJA4ClBN58Tk2" class="namelinks">KNE</a> and <a target="_blank" href="https://open.spotify.com/artist/5WYO9KQUnOwU6EWJiE3fnz" class="namelinks">Valious</a>.</p>
-        <a href="game" class="bot-game">Game</a>
+        <a href="game.html" class="bot-game">Game</a>
     </main>
 
     <header>
-        <a title="Home" class="logo" href="index">SHDE</a> 
+        <a title="Home" class="logo" href="index.html">SHDE</a> 
 
 
-        <span class="links"><a class="sociallink" href="social">Social</a><a class="about-me" href="about-me">About Me</a>
-            <a class="contact-me" href="contact">Contact Me</a></span>
+        <span class="links"><a class="sociallink" href="social.html">Social</a><a class="about-me" href="about-me.html">About Me</a>
+            <a class="contact-me" href="contact.html">Contact Me</a></span>
 
         <nav>
             <label id="nav-label" for="touch"><span>Menu &#9660;</span></label>
             <input  type="checkbox" id="touch"> 
             <ul class="slide">
-                <li><a href="index">Home</a></li> 
-                <li><a href="about-me">About Me</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="social">Social</a></li>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="social.html">Social</a></li>
             </ul>
         </nav>
             
@@ -68,22 +68,31 @@
     </footer>
 
 
-    <span class="headerspan" style="position: absolute;"><a class="game-link" href="game">Game</a></span>
+    <span class="headerspan" style="position: absolute;"><a class="game-link" href="game.html">Game</a></span>
     <script>
-        function spinner(){
-            var screenWidth = window.innerWidth;
-            var profCont = document.querySelector('.prof-cont');
-            var profImg = document.querySelector('.profile-img');
-            if (screenWidth < 700){
-                profCont.addEventListener('click', ()=>{
-                    profImg.style.transform = 'rotate(1440deg)';
-                })
-            }
-        }
-        spinner()
-        window.addEventListener('resize', spinner);
-    </script> 
+        function spinner() {
+    var screenWidth = window.innerWidth;
+    var profCont = document.querySelector('.prof-cont');
+    
+    if (screenWidth < 768) {
+        profCont.addEventListener('click', rotateImage);
+    }
+}
+
+function rotateImage() {
+    var profImg = document.querySelector('.profile-img');
+    profImg.style.transitionDuration = '3200ms';
+    profImg.style.transform = 'rotate(1440deg)';
+    
+    setTimeout(() => {
+        profImg.style.transform = 'rotate(0deg)';
+        profImg.style.transitionDuration = '0s';
+    }, 3300);
+}
+
+window.addEventListener('load', spinner);
+window.addEventListener('resize', spinner);
+    </script>
     
 </body>
 </html>
-
