@@ -70,47 +70,31 @@
 
     <span class="headerspan" style="position: absolute;"><a class="game-link" href="game.html">Game</a></span>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    var profCont = document.querySelector('.prof-cont');
-    var profImg = document.querySelector('.profile-img');
+     var profCont = document.querySelector('.prof-cont');
+var isAnimating = false;
+
+function spinner() {
     var screenWidth = window.innerWidth;
-
-    function handleClick() {
-        if (screenWidth < 768) {
-            rotateImage();
-        }
+    if (screenWidth < 768 && !isAnimating) {
+        rotateImage();
     }
+}
 
-    function handleMouseOver() {
-        if (screenWidth >= 768) {
-            profImg.classList.add('prof-cont-spin');
-        }
-    }
+function rotateImage() {
+    var profImg = document.querySelector('.profile-img');
+    if (isAnimating) return;
 
-    function handleMouseOut() {
-        if (screenWidth >= 768) {
-            profImg.classList.remove('prof-cont-spin');
-        }
-    }
+    isAnimating = true;
+    profImg.classList.add('prof-cont-spin');
 
-    function rotateImage() {
-        profImg.classList.add('prof-cont-spin');
-        setTimeout(function() {
-            profImg.classList.remove('prof-cont-spin');
-        }, 3200);
-    }
+    // Reset animation
+    profImg.addEventListener('animationend', function() {
+        profImg.classList.remove('prof-cont-spin');
+        isAnimating = false;
+    }, { once: true });
+}
 
-    // Event listeners
-    profCont.addEventListener('click', handleClick);
-    profCont.addEventListener('mouseover', handleMouseOver);
-    profCont.addEventListener('mouseout', handleMouseOut);
-
-    // Update screenWidth on resize
-    window.addEventListener('resize', function() {
-        screenWidth = window.innerWidth;
-    });
-});
-
+profCont.addEventListener('click', spinner);
     </script>
     
 </body>
