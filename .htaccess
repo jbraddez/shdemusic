@@ -1,8 +1,9 @@
 RewriteEngine on
+RewriteBase /
 
-RewriteRule ^home index.html [NC]
-RewriteRule ^about_me about-me.html [NC]
-RewriteRule ^contact contact.html [NC]
-RewriteRule ^game game.html [NC]
-RewriteRule ^social social.html [NC]
-RewriteRule ^albums album-stories.html [NC]
+RewriteRule ^home/?$ index.html [NC,L]
+RewriteRule ^about_me/?$ about-me.html [NC,L]
+RewriteRule ^contact/?$ contact.html [NC,L]
+RewriteRule ^game/?$ game.html [NC,L]
+RewriteRule ^social/?$ social.html [NC,L]
+RewriteRule ^albums/?$ album-stories.html [NC,L]
