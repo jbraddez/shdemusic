@@ -150,21 +150,21 @@
     </footer>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+     document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.getElementById('play-button');
     const albumsSection = document.querySelector('.albums');
     const audio = document.getElementById('audio');
 
-    playButton.addEv.htmlentListener('click', function() {
+    playButton.addEventListener('click', function() {
         albumsSection.style.transition = 'top 2s ease';
         albumsSection.style.top = '500px';
 
         playButton.style.display = 'none';
-
         
         audio.play();
     });
 });
+
 
 
 
