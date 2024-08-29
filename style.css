@@ -70,36 +70,7 @@ header{
     transition: 200ms ease-in-out;
 }
 
-.contact-me,.about-me,.sociallink{
-    color: #f2f2f2;
-    position: absolute;
-    right: 30px;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    overflow: none;
-    margin: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: 0.4s ease;
-}
 
-.about-me{
-    right: 130px;
-}
-
-.sociallink{
-    right: 215px;
-}
-
-.links{
-    display: block;
-}
-
-.contact-me:hover,.about-me:hover,.sociallink:hover{
-    top: 47%;
-    text-decoration: underline;
-}
 
 .logo:hover{
     color: #d9d9d9;
@@ -230,8 +201,10 @@ section.albums h1{
     margin: 10px;
 }
 
-.album-card:hover{
-    background: rgba(255, 255, 255, 0.25);
+@media screen and (min-width: 768px) {
+    .album-card:hover{
+        background: rgba(255, 255, 255, 0.25);
+    }
 }
 
 .album-card:hover h2{
@@ -543,6 +516,28 @@ nav ul li a:hover {
 .game-link{display: block;}
 .bot-game{display: none;}
 
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-evenly;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 50%;
+}
+
+.links a {
+    text-decoration: none;
+    transition: 350ms ease-in-out;
+    font-size: 1rem;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    transform: translateY(-5px);
+}
+
 @media screen and (max-width: 750px){
     .spotify-img{width: 120px;}
     .social-cont{width: 35px; height: 35px; margin: 0;}
@@ -556,10 +551,7 @@ nav ul li a:hover {
 }
 
 @media screen and (min-width: 751px){
-        .links{display: block;}
 }
 
 
-@media screen and (min-width: 751px){
-        .links{display: block;}
-}
+

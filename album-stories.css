@@ -1,0 +1,102 @@
+main{
+    margin-top: 100px;
+}
+header{
+    z-index: 1;
+}
+.album-story-card {
+    padding: 10px;
+    border-radius: 50% 150% 50% 150%;
+    transition: transform 850ms ease-in-out;
+}
+
+#alb-title{
+    position: relative;
+    text-align: center;
+    top: 75px;
+    width: min-content;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+#alb-title::before {
+    content: "";
+    position: absolute;
+    width: 107%;
+    height: 5px;
+    background: rgba(0, 230, 255, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    left: -3.5%;
+    z-index: -1;
+    bottom: 5px;
+    border-radius: 8px 0 8px 0;
+  }
+
+.show-card {
+    transform: rotateY(180deg);
+}
+
+.show-name{
+    color: #000;
+}
+
+.show-img{
+    filter: grayscale(100%) blur(10px) brightness(0%) saturate(0%) contrast(1000%);
+    -webkit-filter: grayscale(100%) blur(10px) brightness(0%) saturate(0%) contrast(1000%);
+    -moz-filter: grayscale(100%) blur(10px) brightness(0%) saturate(0%) contrast(1000%);
+}
+.album-story-card h2{
+    transform: translate(15%,-50%);
+    transition: 700ms ease-in-out;
+}
+
+.album-story-card:hover h2{  
+    transform: translate(15%,-50%);
+}
+
+.album-story-card img{
+    transition: 700ms ease-in-out;
+}
+.popover {
+    visibility: hidden;
+    position: fixed;
+    top: 100px; /* Maintain the top position */
+    left: 50%;
+    transform: translate(-50%,-100%) scale(0); /* Scale down from the center */
+    background: #fefefe;
+    border-radius: 16px;
+    opacity: 0;
+    min-width: 290px;
+    max-width: 600px;
+    max-height: 85vh;
+    padding: 6px;
+    z-index: 10;
+    transition: 400ms ease-in-out;
+}
+
+.pop-up {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%,0) scale(1); /* Scale up to full size */
+}
+
+
+
+.popover h2{
+    color: #181818;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.popover hr{
+    border: 0.8px #181818 solid;
+}
+
+.popover p{
+    color: #181818;
+    font-size: 1.2rem;
+    overflow: scroll;
+}

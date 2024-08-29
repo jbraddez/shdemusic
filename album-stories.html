@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHDE - Album Stories</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="website icon" href="./images/SHDE.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="album-stories.css">
+</head>
+<body>
+
+    <header>
+        <a title="Home" class="logo" href="index.html">SHDE</a> 
+
+        <span class="links"><a href="album-stories.html">Albums</a><a href="about-me.html">About Me</a><a href="contact.html">Contact</a><a href="social.html">Social</a></span>
+
+        <nav>
+            <label id="nav-label" for="touch"><span>Menu &#9660;</span></label>
+            <input type="checkbox" id="touch"> 
+            <ul class="slide">
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="album-stories">Albums</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="social.html">Social</a></li>
+            </ul>
+        </nav>        
+    </header>
+    <a title="SHDE | Spotify" href="https://open.spotify.com/artist/4hvHMl18JQMUEX4R1eYS9v"><img class="spotify-img" alt="SHDE on spotify" src="./images/spotify.png"></a>
+    <footer>
+        <a class="socialcont" href="https://on.soundcloud.com/rcQnj2o3fdWNr2SQ8"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/soundcloud-white-icon.png" alt="soundcloud"></a>
+        <a class="socialcont" href="https://www.youtube.com/channel/UC32frJC_AUr5UkMD-MpPHyA"><img class="social" src="https://pngimg.com/d/youtube_button_PNG36.png" alt="youtube"></a>
+        <a class="socialcont" href="https://music.apple.com/gb/artist/shde/1554885395"><img class="social" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Apple_Music_logo.png" alt="apple music"></a>
+        <a class="socialcont" href="https://www.amazon.co.uk/music/player/artists/B08X6CLLVS/shde"><img class="social" src="./images/amazonmusic.png" alt="amazon music"></a>
+        <a class="socialcont" href="https://www.instagram.com/shdemusic/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="instagram"></a>
+    </footer>
+
+    <h1 id="alb-title">Album Stories</h1>
+
+    <main class="albums-cont">
+        <div>
+            <a href="#"><div class="album-card album-story-card">
+                <img src="./images/cov-thinkingaboutyou.jpg">
+                <h2>T.A.Y.</h2>
+            </div></a>
+            <div class="popover">
+                <h2>Thinking About You</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio temporibus nesciunt asperiores vero, sed, voluptates saepe harum nulla dolorum dignissimos molestiae delectus pariatur laudantium ex recusandae dolor perferendis assumenda hic.</p>
+                <!--pictures possible-->
+            </div>
+        </div>
+    </main>
+
+    <script>
+       function openAlbums() {
+    const albums = document.querySelectorAll('.album-story-card');
+
+    albums.forEach(album => {
+        album.addEventListener('click', (event) => {
+            event.stopPropagation();  // Prevent event from bubbling to window
+
+            const popover = album.parentElement.parentElement.querySelector('.popover');
+            
+            if (!popover) {
+                console.error('Popover element not found for this album:', album);
+                return; // Exit the function if the popover is not found
+            }
+
+            // Close any currently open popovers
+            document.querySelectorAll('.popover.pop-up').forEach(openPopover => {
+                if (openPopover !== popover) {
+                    openPopover.classList.remove('pop-up');
+                }
+            });
+
+            // Toggle the current album's classes and the popover
+            album.classList.toggle('show-card');
+            album.querySelector('img').classList.toggle('show-img');
+            album.querySelector('h2').classList.toggle('show-name');
+            popover.classList.toggle('pop-up');
+        });
+    });
+
+    window.addEventListener('click', (event) => {
+        albums.forEach(album => {
+            const popover = album.parentElement.parentElement.querySelector('.popover');
+            
+            if (!popover) {
+                console.error('Popover element not found for this album during outside click:', album);
+                return; // Exit if the popover is not found
+            }
+
+            if (!album.contains(event.target) && !popover.contains(event.target)) {
+                // Close the popover if clicked outside
+                album.classList.remove('show-card');
+                album.querySelector('img').classList.remove('show-img');
+                album.querySelector('h2').classList.remove('show-name');
+                popover.classList.remove('pop-up');
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', openAlbums);
+    </script>
+</body>
+</html>
