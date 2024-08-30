@@ -43,10 +43,12 @@ header{
     color: #000;
 }
 
-.show-img{
+@media screen and (min-width: 768px){
+    .show-img{
     filter: grayscale(100%) blur(10px) brightness(0%) saturate(0%) contrast(1000%);
     -webkit-filter: grayscale(100%) blur(10px) brightness(0%) saturate(0%) contrast(1000%);
     -moz-filter: grayscale(100%) blur(10px) brightness(0%) saturate(0%) contrast(1000%);
+}
 }
 .album-story-card h2{
     transform: translate(15%,-50%);
