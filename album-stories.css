@@ -64,6 +64,7 @@ header{
 .popover {
     visibility: hidden;
     position: fixed;
+    top: 10svh;
     top: 10%; 
     left: 50%;
     transform: translate(-50%,-100%) scale(0); 
@@ -75,6 +76,7 @@ header{
     opacity: 0;
     min-width: 290px;
     max-width: 600px;
+    max-height: 80svh;
     max-height: 80vh;
     padding: 6px;
     z-index: 10;
