@@ -60,10 +60,11 @@ header{
 .album-story-card img{
     transition: 700ms ease-in-out;
 }
+
 .popover {
     visibility: hidden;
     position: fixed;
-    top: 100px; 
+    top: 10%; 
     left: 50%;
     transform: translate(-50%,-100%) scale(0); 
     background: rgba(254, 254, 254, 0.73);
@@ -74,9 +75,10 @@ header{
     opacity: 0;
     min-width: 290px;
     max-width: 600px;
-    max-height: 85vh;
+    max-height: 80vh;
     padding: 6px;
     z-index: 10;
+    overflow: scroll;
     transition: 650ms ease-in-out;
     box-shadow: rgba(255, 255, 255, 0.12) 0px 20px 20px, 
             rgba(255, 255, 255, 0.12) 0px -20px 20px, 
