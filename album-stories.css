@@ -63,10 +63,13 @@ header{
 .popover {
     visibility: hidden;
     position: fixed;
-    top: 100px; /* Maintain the top position */
+    top: 100px; 
     left: 50%;
-    transform: translate(-50%,-100%) scale(0); /* Scale down from the center */
-    background: #fefefe;
+    transform: translate(-50%,-100%) scale(0); 
+    background: rgba(254, 254, 254, 0.73);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(3.9px);
     border-radius: 16px;
     opacity: 0;
     min-width: 290px;
@@ -74,13 +77,19 @@ header{
     max-height: 85vh;
     padding: 6px;
     z-index: 10;
-    transition: 400ms ease-in-out;
+    transition: 650ms ease-in-out;
+    box-shadow: rgba(255, 255, 255, 0.12) 0px 20px 20px, 
+            rgba(255, 255, 255, 0.12) 0px -20px 20px, 
+            rgba(255, 255, 255, 0.12) -20px 0px 20px, 
+            rgba(255, 255, 255, 0.12) 20px 0px 20px, 
+            rgba(255, 255, 255, 0.12) 0px 0px 20px;
+
 }
 
 .pop-up {
     visibility: visible;
     opacity: 1;
-    transform: translate(-50%,0) scale(1); /* Scale up to full size */
+    transform: translate(-50%,0) scale(1); 
 }
 
 
@@ -99,4 +108,5 @@ header{
     color: #181818;
     font-size: 1.2rem;
     overflow: scroll;
+    padding: 5px;
 }
