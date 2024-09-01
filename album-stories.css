@@ -8,6 +8,7 @@ header{
     padding: 10px;
     border-radius: 50% 150% 50% 150%;
     transition: transform 850ms ease-in-out;
+    cursor: pointer;
 }
 
 #alb-title{
