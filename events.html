@@ -24,6 +24,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="SHDE">
     <link rel="apple-touch-icon" href="./images/appleicon.png" sizes="180x180">
+    <style>
+        @media screen and (max-width: 580px){
+            .open-time-cont{
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -58,6 +65,7 @@
                         <img src="./images/NEvol-14_9_24.JPG" alt="NE Volume poster. 14th september">
                         <div class="card-text">
                             <h1>NE Volume &#x2022; 14<sup>th</sup> September</h1>
+                             <p class="open-time-cont" style="transform: translateY(-100px);">Doors open <span id="open-time-14-09"></span></p>
                         </div>
                     </a>
                 </div>
@@ -86,5 +94,25 @@
         <a class="socialcont" href="https://www.amazon.co.uk/music/player/artists/B08X6CLLVS/shde"><img class="social" src="./images/amazonmusic.png" alt="amazon music"></a>
         <a class="socialcont" href="https://www.instagram.com/shdemusic/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="instagram"></a>
     </footer>
+     <script>
+        var countdownDate = new Date("September 14, 2024 18:00:00").getTime();
+
+        var x = setInterval(function() {
+          var now = new Date().getTime();
+          var distance = countdownDate - now;
+        
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+          document.getElementById("open-time-14-09").innerHTML = days + " Days " + hours + " Hours " + minutes + " Mins " + seconds + " Secs";
+        
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("open-time-14-09").innerHTML = "Doors are now open";
+          }
+        }, 100);
+    </script>
 </body>
 </html>
