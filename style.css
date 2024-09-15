@@ -458,25 +458,13 @@ nav ul li a:hover {
     100% {transform: rotate(360deg);}
 }
 
-.game-link{
-    position: absolute !important;
-    top: 50%;
-    text-align: center;
-    text-decoration: none;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    margin-top: 10px;
-    display: none;
-}
-
 .bot-game{
     text-align: center;
     text-decoration: none;
     margin-bottom: 30px;
-    display: none;
 }
 
-.game-link:hover,.bot-game:hover{
+.bot-game:hover{
     text-decoration: underline;
 }
 
@@ -513,8 +501,7 @@ nav ul li a:hover {
     transition: 1s ease-in-out;
 }
 
-.game-link{display: block;}
-.bot-game{display: none;}
+
 
 .links {
     display: flex;
@@ -546,8 +533,6 @@ nav ul li a:hover {
     .logo{font-size:3rem;}
     .links{display:none;}
     nav{display:block;}
-    .game-link{display: none;}
-    .bot-game{display: block;}
 }
 
 @media screen and (min-width: 751px){
