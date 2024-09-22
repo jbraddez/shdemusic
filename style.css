@@ -546,3 +546,13 @@ body * {
   scrollbar-width: none;
 }
 
+body{
+    animation: fadeBody 1s linear;
+}
+
+@keyframes fadeBody {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
