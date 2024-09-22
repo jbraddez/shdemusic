@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHDE - Events</title>
-    <meta name="keywords" content="shde,SHDE,music,events,luke bradley, shde events,gigs,tour,tickets,artist,spotify">
-    <meta name="description" content="SHDE Official Website. Check where I'm at next and where I've been. Book tickets through the posters.">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <link rel="website icon" href="./images/SHDE.png">
@@ -19,18 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./styles/events.css">
-        <!--apple web app tags-->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="SHDE">
-    <link rel="apple-touch-icon" href="./images/appleicon.png" sizes="180x180">
-    <style>
-        @media screen and (max-width: 580px){
-            .open-time-cont{
-                display: none;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -59,8 +45,17 @@
         <section class="upcoming-cont">
             <h1 class="section-title">Upcoming Events</h1>
             <hr>
+            <!-- upcoming events cards below-->
             <div class="section-cards">
-                  <h2 style="text-align: center; margin: 150px 0;">Nothing to see here 🫣</h2>
+                <div class="events-card">
+                    <a target="_blank" href="https://www.seetickets.com/event/ne-thing-goes-shde-more/ne-volume-music-bar/3181372">
+                        <img src="./images/09-10-24.webp" alt="NE Volume poster. 9th October">
+                        <div class="card-text">
+                            <h1>NE Volume &#x2022; 9<sup>th</sup> October</h1>
+                        </div>
+                        <p class="open-time-cont">Doors open in <span id="open-time-09-10"></span></p>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -68,6 +63,7 @@
             <h1 class="section-title">Past Events</h1>
             <hr>
             <!--past events cards below-->
+
             <div class="section-cards">
                 <div class="events-card">
                     <a target="_blank" href="https://www.seetickets.com/event/evergreen-support/ne-volume-music-bar/3147945">
@@ -75,7 +71,6 @@
                         <div class="card-text">
                             <h1>NE Volume &#x2022; 14<sup>th</sup> September</h1>
                         </div>
-                         <p class="open-time-cont" style="transform: translateY(-100px);">Doors open <span id="open-time-14-09"></span></p>
                     </a>
                 </div>
             </div>
@@ -93,25 +88,28 @@
         <a class="socialcont" href="https://www.amazon.co.uk/music/player/artists/B08X6CLLVS/shde"><img class="social" src="./images/amazonmusic.png" alt="amazon music"></a>
         <a class="socialcont" href="https://www.instagram.com/shdemusic/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="instagram"></a>
     </footer>
-     <script>
-        var countdownDate = new Date("September 14, 2024 18:00:00").getTime();
 
-        var x = setInterval(function() {
-          var now = new Date().getTime();
-          var distance = countdownDate - now;
-        
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-          document.getElementById("open-time-14-09").innerHTML = days + " Days " + hours + " Hours " + minutes + " Mins " + seconds + " Secs";
-        
-          if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("open-time-14-09").innerHTML = "Doors are now open";
-          }
-        }, 100);
+    <script>
+        var countdownDate = new Date("October 09, 2024 18:00:00").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countdownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("open-time-09-10").innerHTML = days + " Days " + hours + " Hours " + minutes + " Mins " + seconds + " Secs";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("open-time-09-10").innerHTML = "";
+    document.getElementById("open-time-09-10").parentElement.innerHTML = "Doors are now open";
+  }
+}, 100);
+
     </script>
 </body>
 </html>

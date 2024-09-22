@@ -71,13 +71,16 @@ section{
 
 
 .card-text{
-    position: relative;
-    rotate: 90deg;
-    transform:translate(-75%,0%);
-    left: 50%;
-    top: 50%;
-    font-size: 1.4rem;
-    width: max-content;
+    position: absolute;
+    white-space: nowrap;
+    top: 0;
+    left: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.card-text h1{
+ rotate: 90deg;
 }
 
 
@@ -91,13 +94,11 @@ section{
 
 
 @media screen and (max-width: 580px){
-    .events-card{
-        width: 90%;
-    }
-    .card-text{
-        all: unset;
-        font-size: 0.9rem;
-        position: relative;
-        top: 0;
-    }
+   .card-text{
+    font-size: 0.8rem;
+    margin-left: -9px;
+   }
+   .open-time-cont{
+    margin-top: 0;
+   }
 }
