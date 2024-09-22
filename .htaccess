@@ -1,10 +1,13 @@
 RewriteEngine on
 RewriteBase /
 
-RewriteRule ^index/?$ index.html [NC,L]
+RewriteRule ^index/?$ / [R=301,L]
+
 RewriteRule ^about_me/?$ about-me.html [NC,L]
 RewriteRule ^contact/?$ contact.html [NC,L]
 RewriteRule ^game/?$ game.html [NC,L]
 RewriteRule ^social/?$ social.html [NC,L]
 RewriteRule ^album-stories/?$ album-stories.html [NC,L]
 RewriteRule ^events/?$ events.html [NC,L]
+
+DirectoryIndex index.html
