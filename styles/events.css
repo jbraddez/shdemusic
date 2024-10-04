@@ -50,8 +50,9 @@ section{
 .section-cards{
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .events-card {
