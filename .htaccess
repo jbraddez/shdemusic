@@ -9,5 +9,6 @@ RewriteRule ^game/?$ game.html [NC,L]
 RewriteRule ^social/?$ social.html [NC,L]
 RewriteRule ^album-stories/?$ album-stories.html [NC,L]
 RewriteRule ^events/?$ events.html [NC,L]
+RewriteRule ^portfolio/?$ portfolio.html [NC,L]
 
 DirectoryIndex index.html
