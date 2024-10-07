@@ -61,6 +61,17 @@
                         <p class="open-time-cont">Doors open in <span id="open-time-09-10"></span></p>
                     </a>
                 </div>
+
+                <div class="events-card">
+                    <a target="_blank" href="https://www.seetickets.com/event/ne-thing-goes-shde-more/ne-volume-music-bar/3181372">
+                        <img src="./images/NEvol-25_10_24.webp" alt="NE Volume poster. 25th October">
+                        <div class="card-text">
+                            <h1>NE Volume &#x2022; 25<sup>th</sup> October</h1>
+                        </div>
+                        <p class="open-time-cont">Doors open in <span id="open-time-25-10"></span></p>
+                    </a>
+                </div>
+                
             </div>
         </section>
 
@@ -95,25 +106,30 @@
     </footer>
 
     <script>
-        var countdownDate = new Date("October 09, 2024 18:00:00").getTime();
+       function startCountdown(countdownDate, elementId) {
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countdownDate - now;
 
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countdownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById(elementId).innerHTML = days + " Days " + hours + " Hours " + minutes + " Mins " + seconds + " Secs";
 
-  document.getElementById("open-time-09-10").innerHTML = days + " Days " + hours + " Hours " + minutes + " Mins " + seconds + " Secs";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById(elementId).innerHTML = "";
+      document.getElementById(elementId).parentElement.innerHTML = "Doors are now open";
+    }
+  }, 100);
+}
 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("open-time-09-10").innerHTML = "";
-    document.getElementById("open-time-09-10").parentElement.innerHTML = "Doors are now open";
-  }
-}, 100);
+// Start both countdowns by calling the function with different dates and element IDs
+startCountdown(new Date("October 09, 2024 18:00:00").getTime(), "open-time-09-10");
+startCountdown(new Date("October 25, 2024 18:00:00").getTime(), "open-time-25-10");
+
 
     </script>
 </body>
