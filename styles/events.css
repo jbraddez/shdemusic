@@ -57,6 +57,7 @@ section{
 
 .events-card {
     max-width: 350px;
+    min-width: 250px;
     border-radius: 6px;
     position: relative;
     margin: 20px;
@@ -103,3 +104,4 @@ section{
     margin-top: 0;
    }
 }
+
