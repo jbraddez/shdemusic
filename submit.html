@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHDE - Events</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="website icon" href="./images/SHDE.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Black+Ops+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+        <!--apple web app tags-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="SHDE">
+        <link rel="apple-touch-icon" href="./images/SHDE.png" sizes="180x180">
+    <link rel="stylesheet" href="styles/submit.css">
+</head>
+<body>
+
+    <header>
+        <a title="Home" class="logo" href="index">SHDE</a> 
+
+        <span class="links"><a href="events">Events</a><a href="album-stories">Albums</a><a href="about-me">About Me</a><a href="contact">Contact</a><a href="portfolio">Portfolio</a><a href="social">Social</a></span>
+
+        <nav>
+            <label id="nav-label" for="touch"><span>Menu &#9660;</span></label>
+            <input type="checkbox" id="touch"> 
+            <ul class="slide">
+                <li><a href="index">Home</a></li> 
+                <li><a href="events">Events</a></li>
+                <li><a href="about-me">About Me</a></li>
+                <li><a href="album-stories">Albums</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="portfolio">Portfolio</a></li>
+                <li><a href="social">Social</a></li>
+            </ul>
+        </nav>
+            
+    </header>
+
+
+    <main>
+        <h4>Add images/videos and press submit. See them in the past events section on the <a style="text-decoration: none;" id="events-link" href="events.html">events page</a> after a check of the files.</h4>
+        <form action="https://formsubmit.co/1b9f708f9b96bb645a33e6fad9e8bc39" method="POST" enctype="multipart/form-data">
+            <label for="file-input" id="filelabel">Choose photos/videos</label>
+            <input name="attachment" id="file-input" type="file" accept="image/*, video/*" required multiple="multiple" onchange="previewFiles()">
+
+            <div id="file-previews"></div>
+
+            <button onclick="submitWait()" id="submit" type="submit">Submit</button>
+        </form>
+        <div id="wait">Please wait...</div>
+    </main>
+
+
+    <a title="SHDE | Spotify" href="https://open.spotify.com/artist/4hvHMl18JQMUEX4R1eYS9v"><img class="spotify-img" alt="SHDE on spotify" src="./images/spotify.png"></a>
+    <footer>
+        <a class="socialcont" href="https://on.soundcloud.com/rcQnj2o3fdWNr2SQ8"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/soundcloud-white-icon.png" alt="soundcloud"></a>
+        <a class="socialcont" href="https://www.youtube.com/channel/UC32frJC_AUr5UkMD-MpPHyA"><img class="social" src="https://pngimg.com/d/youtube_button_PNG36.png" alt="youtube"></a>
+        <a class="socialcont" href="https://music.apple.com/gb/artist/shde/1554885395"><img class="social" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Apple_Music_logo.png" alt="apple music"></a>
+        <a class="socialcont" href="https://www.amazon.co.uk/music/player/artists/B08X6CLLVS/shde"><img class="social" src="./images/amazonmusic.png" alt="amazon music"></a>
+        <a class="socialcont" href="https://www.instagram.com/shdemusic/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="instagram"></a>
+    </footer>
+    
+    <script>
+        function previewFiles() {
+        const fileInput = document.getElementById('file-input');
+        const previewContainer = document.getElementById('file-previews');
+        previewContainer.innerHTML = '';
+
+        const files = fileInput.files;
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const fileURL = URL.createObjectURL(file);
+            const fileElement = document.createElement('div');
+            fileElement.classList.add('preview');
+
+            if (file.type.startsWith('image/')) {
+                const img = document.createElement('img');
+                img.src = fileURL;
+                img.alt = 'Image preview';
+                img.style.maxWidth = '100%';
+                fileElement.appendChild(img);
+            } else if (file.type.startsWith('video/')) {
+                const video = document.createElement('video');
+                video.src = fileURL;
+                video.controls = true; 
+                video.style.maxWidth = '100%'; 
+                fileElement.appendChild(video);
+            }
+
+            previewContainer.appendChild(fileElement);
+        }
+    }
+    </script>
+    <script>
+        function submitWait(){
+            if (fileInput.files.length <= 0){
+                document.getElementById("wait").style.visibility = 'visible';
+            }
+        }
+    </script>
+
+ 
+</body>
+</html>
