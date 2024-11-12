@@ -1,0 +1,85 @@
+main{
+    position: relative;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#events-link:hover{
+    text-decoration: underline !important;
+}
+
+main h4{
+    text-align: center;
+    margin: 0 5px;
+}
+
+#filelabel{
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #acacac;
+    background: rgba(41,41,41,0.35);
+    border: 1px solid #ccc;
+    display: inline-block;
+    cursor: pointer;
+    transition: 400ms ease-in-out;
+}
+
+#filelabel:hover{
+    scale: 1.1;
+    background: rgba(41,41,41,0.45);
+}
+
+#file-input{
+    display: none;
+}
+
+form{
+    margin: 40px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 35px;
+}   
+header{
+    z-index: 2;
+}
+
+button[type="submit"]{
+    background: rgb(61, 166, 61);
+    padding: 6px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+#file-previews{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview {
+    margin-top: 10px;
+    max-width: 200px;
+    margin: 0 10px;
+}
+
+@media screen and (max-width:600px){
+    .preview{
+        max-width: 130px;
+    }
+}
+#wait{
+    visibility: hidden;
+}
