@@ -101,7 +101,14 @@
         }
     }
     </script>
-   
+   <script>
+        const submit = document.getElementById("submit");
+        submit.addEventListener("click", () => {
+            if (document.getElementById('file-input').files.length > 0){
+                document.getElementById("wait").style.visibility = 'visible';
+            }
+        });
+    </script>
 
  
 </body>
