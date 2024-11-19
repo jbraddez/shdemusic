@@ -54,7 +54,7 @@
             <input name="attachment" id="file-input" type="file" accept="image/*, video/*" required multiple="multiple" onchange="previewFiles()">
 
             <div id="file-previews"></div>
-
+            <input type="hidden" name="_captcha" value="false"><!--Remove if getting spam-->
             <button id="submit" type="submit">Submit</button>
         </form>
         <div id="wait">Please wait...</div>
