@@ -542,6 +542,7 @@ nav ul li a:hover {
 .hide-footer{
     display: none;
 }
+
 @media screen and (max-width: 750px){
     .spotify-img{width: 120px;}
     .social-cont{width: 35px; height: 35px; margin: 0;}
