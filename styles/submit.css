@@ -83,3 +83,11 @@ button[type="submit"]{
 #wait{
     visibility: hidden;
 }
+
+#email-send{
+    color: red; text-decoration: none;
+}
+
+#email-send:hover{
+    text-decoration: underline;
+}
