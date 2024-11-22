@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHDE - Submit Photos</title>
+    <title>SHDE - Events</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <link rel="website icon" href="./images/SHDE.png">
@@ -49,15 +49,22 @@
 
     <main>
         <h4>Add images/videos and press submit. See them in the past events section on the <a style="text-decoration: none;" id="events-link" href="events.html">events page</a> after a check of the files.</h4>
-        <form action="https://formsubmit.co/75a6d40364acaabb6b8bd785e596e7c1" method="POST" enctype="multipart/form-data">
+        <form action="https://getform.io/f/azyygoqb" method="POST" enctype="multipart/form-data">
             <label for="file-input" id="filelabel">Choose photos/videos</label>
-            <input name="attachment" id="file-input" type="file" accept="image/*, video/*" required multiple="multiple" onchange="previewFiles()">
+            <input name="files[]" id="file-input" type="file" accept="image/*, video/*" required multiple="multiple" onchange="previewFiles()">
+            <input type="hidden" name="_gotcha" style="display:none !important">
 
             <div id="file-previews"></div>
-            <input type="hidden" name="_captcha" value="false"><!--Remove if getting spam-->
+
             <button id="submit" type="submit">Submit</button>
         </form>
-        <div id="wait">Please wait...</div>
+
+        <div id="size-warning" style="color: red; display: none;">
+            The total file size is too large. <a id="email-send" href="./contact">Please email or send them via Instagram.</a>
+        </div>
+
+        <div id="wait" style="margin-bottom: 30px;">Please wait...</div>
+
     </main>
 
 
@@ -70,6 +77,31 @@
         <a class="socialcont" href="https://www.instagram.com/shdemusic/?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><img class="social" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="instagram"></a>
     </footer>
     
+
+<script>
+    const fileInput = document.getElementById("file-input");
+    const sizeWarning = document.getElementById("size-warning");
+    const submitButton = document.getElementById("submit");
+
+    fileInput.addEventListener("change", function() {
+        let totalSize = 0;
+        const files = fileInput.files;
+
+        for (let i = 0; i < files.length; i++) {
+            totalSize += files[i].size;
+        }
+
+        if (totalSize > 5 * 1024 * 1024) { 
+            sizeWarning.style.display = "block";
+            submitButton.disabled = true;
+        } else {
+            sizeWarning.style.display = "none";
+            submitButton.disabled = false; 
+        }
+    });
+</script>
+
+
     <script>
         function previewFiles() {
         const fileInput = document.getElementById('file-input');
@@ -101,7 +133,7 @@
         }
     }
     </script>
-   <script>
+    <script>
         const submit = document.getElementById("submit");
         submit.addEventListener("click", () => {
             if (document.getElementById('file-input').files.length > 0){
