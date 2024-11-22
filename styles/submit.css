@@ -91,3 +91,13 @@ button[type="submit"]{
 #email-send:hover{
     text-decoration: underline;
 }
+
+#size-warning{
+    text-align: center;
+    margin: 15px;
+    z-index: 5;
+    padding: 6px;
+    background-color: rgba(41,41,41,0.55);
+    border-radius: 5px;
+    border: 1px solid black;
+}
