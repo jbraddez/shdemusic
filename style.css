@@ -539,6 +539,9 @@ nav ul li a:hover {
     transform: translateY(-3px);
 }
 
+.hide-footer{
+    display: none;
+}
 @media screen and (max-width: 750px){
     .spotify-img{width: 120px;}
     .social-cont{width: 35px; height: 35px; margin: 0;}
@@ -547,6 +550,9 @@ nav ul li a:hover {
     .logo{font-size:3rem;}
     .links{display:none;}
     nav{display:block;}
+    .hide-footer{
+        display: block;
+    }
 }
 
 @media screen and (min-width: 751px){
