@@ -54,16 +54,6 @@
             <div class="section-cards">
 
                 <div class="events-card">
-                    <a target="_blank" href="https://www.seetickets.com/event/shde-support/ne-volume-music-bar/3218197">
-                        <img src="./images/23_11_24.webp" alt="NE Volume poster. 23rd November">
-                        <div class="card-text">
-                            <h1>NE Volume &#x2022; 23<sup>rd</sup> November</h1>
-                        </div>
-                        <p class="open-time-cont">Doors open in <span id="open-time-23-11"></span></p>
-                    </a>
-                </div>
-
-                <div class="events-card">
                     <a target="_blank">
                         <img src="./images/12_12_24.webp" alt="NE Volume poster. 12th December">
                         <div class="card-text">
@@ -80,6 +70,15 @@
             <h1 class="section-title">Past Events</h1>
             <hr>
             <!--past events cards below-->
+            
+             <div class="events-card">
+                    <a target="_blank" href="https://www.seetickets.com/event/shde-support/ne-volume-music-bar/3218197">
+                        <img src="./images/23_11_24.webp" alt="NE Volume poster. 23rd November">
+                        <div class="card-text">
+                            <h1>NE Volume &#x2022; 23<sup>rd</sup> November</h1>
+                        </div>
+                    </a>
+                </div>
 
             <div class="section-cards">
                 <div class="events-card">
@@ -146,8 +145,7 @@
   }, 100);
 }
 
-// Start both countdowns by calling the function with different dates and element IDs
-startCountdown(new Date("November 23, 2024 18:00:00").getTime(), "open-time-23-11");
+// Start both countdowns by calling the function with different dates and element id
 startCountdown(new Date("December 12, 2024 18:00:00").getTime(), "open-time-12-12");
 
 
