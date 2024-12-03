@@ -32,6 +32,21 @@
     <meta name="apple-mobile-web-app-title" content="SHDE">
     <link rel="apple-touch-icon" href="./images/appleicon.png" sizes="180x180">
     <meta name="msvalidate.01" content="5629498CDCC4D001164841EBC3A7F985" />
+
+    <!--push notifications-->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(function(OneSignal) {
+        OneSignal.init({
+        appId: "3f5d2e20-832b-4e5a-bbfa-6bea64ea3972",
+        safari_web_id: "web.onesignal.auto.0534d2b4-18a9-4e11-8788-4e680cd265b6",
+        notifyButton: {
+            enable: true,
+        },
+        });
+    });
+    </script>
 </head>
 <body>
  
@@ -179,36 +194,11 @@
         audio.play();
     });
 });
-
-
-
-
     </script>
 
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "3f5d2e20-832b-4e5a-bbfa-6bea64ea3972",
-      safari_web_id: "web.onesignal.auto.0534d2b4-18a9-4e11-8788-4e680cd265b6",
-      notifyButton: {
-        enable: true,
-      },
-    });
-
-    OneSignal.push(function() {
-      OneSignal.registerForPushNotifications();
-    });
+    <script>
+      OneSignal.Notifications.requestPermission();
+    </script>
     
-    OneSignal.on('subscriptionChange', function (isSubscribed) {
-      if (isSubscribed) {
-        console.log("User is subscribed to notifications.");
-      } else {
-        console.log("User declined notifications.");
-      }
-    });
-  });
-</script>
 </body>
 </html>
