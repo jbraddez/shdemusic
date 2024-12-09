@@ -46,6 +46,18 @@
     
 </head>
 <body>
+
+    <div class="popup">
+        <div class="popupcross" onclick="hidePopup()" id="indexpopupcross">&times;</div>
+        <h3 style="margin: 8px 30px 5px 30px;">SHDE is on NYE at NE Volume!</h3>
+        <hr style="width: 100%; border: 1px solid rgba(255, 255, 255, 0.3);">
+        <a href="./events">
+            <div class="popup-img-cont">
+                <img src="./images/31-12-24.webp" alt="NE Volume New Years Eve Poster featuring SHDE and more.">
+            </div>
+        </a>
+        <p style="font-size: 0.7rem;">Click the poster to go to the events page.</p>
+    </div>
  
     <div class="marquee">
         <div class="marquee-content">
@@ -193,6 +205,32 @@
 });
     </script>
 
+    //popup for events
+    <script>
+        var indexCross = document.getElementById("indexpopupcross");
+        function hidePopup() {
+            document.querySelector('.popup').style.display = 'none';
+        }
+
+        function showPopup() {
+            document.querySelector('.popup').style.display = 'flex';
+            document.querySelector('.popup').style.transform = 'scale(1)';
+        }
+
+        window.onload = () => {
+            setTimeout(showPopup, Math.random() * (16000 - 3000) + 3000); 
+        };
+
+        window.onload = () => {
+        if (!sessionStorage.getItem('popupShown')) {
+            setTimeout(() => {
+                showPopup();
+                sessionStorage.setItem('popupShown', 'true');
+            }, Math.random() * (16000 - 3000) + 3000);
+        }
+    };
+        
+    </script>
 
 
 </body>
