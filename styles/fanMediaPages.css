@@ -4,6 +4,17 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+}
+main{
+    text-align: center;
+}
+
+.photo-cont{
+    position: relative;
 }
 
 video{
@@ -25,4 +36,29 @@ video{
 .modal-content {
     max-width: 100%;
     max-height: 100%;
+}
+
+.photo-cont svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+    
+    margin: 3px;
+    width: 15px;
+    fill: #fefefe;
+}
+
+
+
+@media screen and (max-width: 530px){
+    h1{
+        font-size: 1.1rem;
+    }
+
+    .photo-cont{
+        width: 100px;
+        height: 100px;
+    }
 }
