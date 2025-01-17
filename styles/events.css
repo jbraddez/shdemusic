@@ -93,6 +93,37 @@ section{
     height: auto;
     min-width: none;
 }
+.no-events {
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #bbb;
+    margin-top: 50px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.no-events span {
+    display: block;
+    font-size: 16px;
+    color: #888;
+}
+
+
+.camera-icon svg{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 8px;
+    aspect-ratio: 1/1;
+    width: 20px;
+    background: rgb(0, 0, 0); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
 
 
 @media screen and (max-width: 580px){
