@@ -57,16 +57,6 @@
 
                 
 
-                <div class="events-card">
-                    <a target="_blank" href="https://www.seetickets.com/event/shde-support/ne-volume-music-bar/3262027">
-                        <img src="./images/17-01-25.webp" alt="NE Volume poster. 17th January 2025">
-                        <div class="card-text">
-                            <h1>NE Volume &#x2022; 17<sup>th</sup> January</h1>
-                        </div>
-                        <p class="open-time-cont">Doors open in <span id="open-time-17-01"></span></p>
-                    </a>
-                </div>
-                
             </div>
         </section>
 
@@ -75,9 +65,19 @@
             <hr>
             <div class="section-cards">
             <!--past events cards below-->
+
+            <div class="events-card">
+                <a target="_blank" href="https://www.seetickets.com/event/shde-support/ne-volume-music-bar/3262027">
+                    <img src="./images/17-01-25.webp" alt="NE Volume poster. 17th January 2025">
+                    <div class="card-text">
+                        <h1>NE Volume &#x2022; 17<sup>th</sup> January</h1>
+                    </div>
+                </a>
+            </div>
+            
             
                 <div class="events-card">
-                    <a target="_blank" href="">
+                    <a target="_blank" href="./31-12-24">
                         <img src="./images/31-12-24.webp" alt="NE Volume poster. New Years Eve (31st December)">
                         <div class="card-text">
                             <h1>NE Volume &#x2022; 31<sup>st</sup> December</h1>
@@ -122,7 +122,7 @@
                 </div>
                 
                 <div class="events-card">
-                    <a target="_blank" href="">
+                    <a target="_blank" href="./14-09-24">
                         <img src="./images/NEvol-14_9_24.JPG" alt="NE Volume poster. 14th september">
                         <div class="card-text">
                             <h1>NE Volume &#x2022; 14<sup>th</sup> September</h1>
@@ -167,8 +167,8 @@
   }, 100);
 }
 
-// Start both countdowns by calling the function with different dates and element id
-startCountdown(new Date("January 17, 2025 18:00:00").getTime(), "open-time-17-01");
+// initiate countdowns
+// e.g. startCountdown(new Date("January 17, 2025 18:00:00").getTime(), "open-time-17-01");
 
     </script>
 </body>

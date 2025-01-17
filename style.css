@@ -642,3 +642,7 @@ footer{
                 width: 80%;
             }
         }
+
+.photo-cont{
+    cursor: pointer;
+}
