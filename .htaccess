@@ -15,5 +15,6 @@ RewriteRule ^submit/?$ submit.html [NC,L]
 RewriteRule ^12-12-24/?$ 12-12-24.html [NC,L]
 RewriteRule ^31-12-24/?$ 31-12-24.html [NC,L]
 RewriteRule ^14-09-24/?$ 14-09-24.html [NC,L]
+RewriteRule ^17-01-25/?$ 17-01-25.html [NC,L]
 
 DirectoryIndex index.html
