@@ -14,7 +14,7 @@ main{
     -webkit-backdrop-filter: blur(3.9px);
     border-radius: 24px;
     width: 80%;
-    max-width: 1200px;
+    max-width: 1200px; 
 }
 
 main *{
