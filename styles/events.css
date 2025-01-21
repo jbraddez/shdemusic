@@ -135,6 +135,7 @@ section{
    }
    .open-time-cont{
     margin-top: 0;
+    text-wrap: auto;
    }
 }
 
