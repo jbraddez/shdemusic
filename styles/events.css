@@ -124,7 +124,9 @@ section{
     border-radius: 50%;
 }
 
-
+.open-time-cont{
+    text-wrap: nowrap;
+}
 
 @media screen and (max-width: 580px){
    .card-text{
