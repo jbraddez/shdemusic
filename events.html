@@ -55,7 +55,13 @@
             <!-- upcoming events cards below-->
             <div class="section-cards">
 
-              <p>Check back later for more events!</p>
+                <div class="events-card">
+                    <img src="./images/29-03-25.webp" alt="NE Volume poster. 29th March 2025">
+                    <div class="card-text">
+                        <h1>NE Volume &#x2022; 29<sup>th</sup> March</h1>
+                    </div>
+                    <p class="open-time-cont" id="open-time-29-03">Doors open 29th March 2025 @ 6pm</p>
+                </div>
 
             </div>
         </section>
@@ -66,12 +72,12 @@
             <div class="section-cards">
             <!--past events cards below-->
 
-                  <div class="events-card">
+                    <div class="events-card">
                         <img src="./images/21-02-25.webp" alt="NE Volume poster. 21st February 2025">
                         <div class="card-text">
                             <h1>NE Volume &#x2022; 21<sup>st</sup> February</h1>
                         </div>
-                </div>
+                    </div>
 
                 <div class="events-card">
                         <img src="./images/15-02-25.webp" alt="NE Volume poster. 15th February 2025">
@@ -176,18 +182,18 @@
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById(elementId).innerHTML = days + " Days " + hours + " Hours " + minutes + " Mins " + seconds + " Secs";
+    document.getElementById(elementId).innerHTML = "Doors open in " days + " Days " + hours + " Hours " + minutes + " Mins " + seconds + " Secs";
 
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById(elementId).innerHTML = "";
-      document.getElementById(elementId).parentElement.innerHTML = "Doors are now open";
+      document.getElementById(elementId).innerHTML = "Doors are now open";
     }
   }, 100);
 }
 
 // initiate countdowns
 // e.g. startCountdown(new Date("January 17, 2025 18:00:00").getTime(), "open-time-17-01");
+    startCountdown(new Date("March 29, 2025 18:00:00").getTime(), "open-time-25-03");
 
     </script>
 </body>
